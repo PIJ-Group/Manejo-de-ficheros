@@ -22,7 +22,6 @@ public class Principal {
 		int opcion;
 		Coche cocheAux;
 		DaoCoche dC = new DaoCoche();
-		List <Coche>listaCoches = new ArrayList<Coche>();
 		String idAux;
 		File fn = new File(NFICHERO);
 		
@@ -30,12 +29,12 @@ public class Principal {
 			try (FileInputStream fis = new FileInputStream(fn);
 					 ObjectInputStream ois = new ObjectInputStream(fis);) {
 					
-					listaCoches = (List<Coche>)ois.readObject();
+					dC.listaCoches = (List<Coche>)ois.readObject();
 					
 					System.out.println("Objeto leido");
 					System.out.println("Imprimiendo Coches");
 					
-					for(Coche c : listaCoches){
+					for(Coche c : dC.listaCoches){
 						System.out.println(c);
 					}
 				} catch (FileNotFoundException e) {
@@ -93,18 +92,17 @@ public class Principal {
 				break;
 				
 			case 4:
-				listaCoches = dC.listarCoches();
-				for(Coche c : listaCoches )
+				dC.listaCoches = dC.listarCoches();
+				for(Coche c : dC.listaCoches )
 				System.out.println(c);
 				break;
 			
 			case 5:
 				System.out.println("\nIntroduciendo Coches \n");
-				listaCoches = dC.listarCoches();
 								
 				try (FileOutputStream fos = new FileOutputStream(fn);
 						ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-						oos.writeObject(listaCoches);
+						oos.writeObject(dC.listaCoches);
 						System.out.println("Cerrando aplicación");
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
