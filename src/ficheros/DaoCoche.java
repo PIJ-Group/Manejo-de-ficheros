@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaoCoche {
+
 private List<Coche> listaCoches;
 //File file = new File(EscrituraListaCoches.nFichero);	
 	public DaoCoche () {
@@ -22,6 +23,7 @@ private List<Coche> listaCoches;
 		else {
 			listaCoches.add(c);
 			cont = listaCoches.size()-1;
+			System.out.println("Coche añadido");
 			return listaCoches.get(cont);
 		}
 
@@ -33,8 +35,7 @@ private List<Coche> listaCoches;
 			for(Coche c : listaCoches) {	
 				if(c.getId().equals(id)){
 					int vAux = listaCoches.indexOf(c);
-					System.out.println(vAux);
-					System.out.println("Borrar => Coche " + c + "");
+					System.out.println("Borrar => " + c + "");
 					return listaCoches.remove(vAux);
 				}		
 			}
