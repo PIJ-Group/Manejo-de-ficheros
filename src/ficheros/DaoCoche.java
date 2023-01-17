@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DaoCoche {
 
-private List<Coche> listaCoches;
+List<Coche> listaCoches;
 //File file = new File(EscrituraListaCoches.nFichero);	
 	public DaoCoche () {
 		super();

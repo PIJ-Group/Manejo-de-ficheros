@@ -1,8 +1,11 @@
 package ficheros;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Coche {
+public class Coche implements Serializable{
+	
+	private static final long serialVersionUID = -6707591127557772206L;
 	String id,matricula,marca,modelo,color;
 
 	public Coche() {
@@ -78,6 +81,6 @@ public class Coche {
 		if (getClass() != obj.getClass())
 			return false;
 		Coche other = (Coche) obj;
-		return Objects.equals(id, other.id) && Objects.equals(matricula, other.matricula);
+		return Objects.equals(id, other.id) || Objects.equals(matricula, other.matricula);
 	}
 }

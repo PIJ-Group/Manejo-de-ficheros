@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Principal {
 	static Scanner sc = new Scanner(System.in);
-	static final String nFichero = "coches.dat";
+	static final String NFICHERO = "coches.dat";
 	
 	 
 
@@ -24,7 +24,7 @@ public class Principal {
 		DaoCoche dC = new DaoCoche();
 		List <Coche>listaCoches = new ArrayList<Coche>();
 		String idAux;
-		File fn = new File(nFichero);
+		File fn = new File(NFICHERO);
 		
 		if(fn.exists()) {
 			try (FileInputStream fis = new FileInputStream(fn);
@@ -48,7 +48,8 @@ public class Principal {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-		}
+		}else 
+			System.out.println("El fichero " + NFICHERO + " no existe");
 		
 		
 		do {
@@ -98,9 +99,9 @@ public class Principal {
 				break;
 			
 			case 5:
-				System.out.println("Introduciendo Coches: \n"
-						+ dC.listarCoches());
-				//File file = new File(nFichero);
+				System.out.println("\nIntroduciendo Coches \n");
+				listaCoches = dC.listarCoches();
+								
 				try (FileOutputStream fos = new FileOutputStream(fn);
 						ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 						oos.writeObject(listaCoches);
