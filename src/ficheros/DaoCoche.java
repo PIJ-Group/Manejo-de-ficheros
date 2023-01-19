@@ -6,7 +6,7 @@ import java.util.List;
 public class DaoCoche {
 
 List<Coche> listaCoches;
-//File file = new File(EscrituraListaCoches.nFichero);	
+	
 	public DaoCoche () {
 		super();
 		listaCoches = new ArrayList<Coche>();
@@ -31,28 +31,39 @@ List<Coche> listaCoches;
 	
 	public Coche borrarCoche(String id) {
 		
-		try {
-			for(Coche c : listaCoches) {	
-				if(c.getId().equals(id)){
-					int vAux = listaCoches.indexOf(c);
-					System.out.println("Borrar => " + c + "");
-					return listaCoches.remove(vAux);
-				}		
-			}
+		boolean auxCocheEncontrado = false;
+
+		for(Coche c : listaCoches) {	
+			if(c.getId().equals(id)){
+				int vAux = listaCoches.indexOf(c);
+				System.out.println("Borrar => " + c + "");
+				auxCocheEncontrado = true;
+				return listaCoches.remove(vAux);
+				
+			}		
+		}
 		
-		}catch (UnsupportedOperationException e) {
-			System.out.println("Borrar => El Coche no se encuentra en la lista ");
-			return null ;
-		}		
+		if (!auxCocheEncontrado)
+			System.out.println("Borrar => El coche no se encuentra en la lista");
+	
 		return null;	
 	}
 	
 	public Coche buscarCoche(String id) {
+		
+		boolean auxCocheEncontrado = false;
+		
 		for(Coche c : listaCoches) {
 			if(c.getId().equals(id)) {
-				return c;
+				System.out.println(c);
+				auxCocheEncontrado = true;
+
 			}
 		}
+		
+		if (!auxCocheEncontrado)
+			System.out.println("Buscar => El coche no se encuentra en la lista");
+		
 		return null;
 	}
 	
