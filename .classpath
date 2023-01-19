@@ -6,6 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Israel/OneDrive/Documentos/DAM/Acceso a Datos/javacsv.jar"/>
+	<classpathentry kind="lib" path="javacsv.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

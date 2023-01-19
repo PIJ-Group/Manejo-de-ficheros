@@ -86,8 +86,7 @@ public class Principal {
 			case 3:
 				System.out.println("Escribe el ID del vehículo a buscar: ");
 				idAux = sc.next();
-				cocheAux = dC.buscarCoche(idAux);
-				System.out.println(cocheAux);
+				dC.buscarCoche(idAux);
 				break;
 
 			case 4:				
@@ -110,7 +109,8 @@ public class Principal {
 					System.out.println("Cerrando aplicación");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
-
+					e.printStackTrace();
+					System.out.println("No se han podido cargar los datos");
 				}
 
 				break;
