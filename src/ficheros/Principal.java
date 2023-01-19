@@ -90,8 +90,7 @@ public class Principal {
 				System.out.println(cocheAux);
 				break;
 
-			case 4:
-				dC.listaCoches = dC.listarCoches();
+			case 4:				
 				for (Coche c : dC.listaCoches)
 					System.out.println(c);
 				break;

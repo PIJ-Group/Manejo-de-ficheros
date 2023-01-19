@@ -56,7 +56,4 @@ List<Coche> listaCoches;
 		return null;
 	}
 	
-	public List<Coche> listarCoches(){
-	    return listaCoches;
-	}
 }
